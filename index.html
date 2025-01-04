@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <title>weather check</title>
   </head>
   <body>
@@ -22,6 +23,7 @@
         <div class="w-full flex flex-col items-center mt-10 text-3xl">
             <p id="city-result">cityName</p>
             <div class="bg-green-500">
+              <p id="temp" class="text-center font-bold text-white"></p>
             <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="weather" id="weatherIcon">
             </div>
             <p id="type">weather</p>
@@ -29,15 +31,22 @@
         <div class="w-full h-1/2 mt-3 flex justify-evenly items-center bg-slate-300 shadow-inner">
             <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">feels like:
                 <p id="feels"></p>
-                <p></p>
+                <i class="fas fa-thermometer-full text-orange-300"></i>
+                <p>max: <i class="fas fa-caret-up text-red-600"></i></p>
+                <p id="max-weather"></p>
+                <p id="max"></p>
+                <p>min: <i class="fas fa-caret-down text-blue-600"></i></p>
+                <p id="min-weather"></p>
+                <p id="max"></p>
             </div>
             <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">humidity:
                 <p id="humidity"></p>
-                <p>💧</p>
+                <i class="fas fa-tint text-blue-600"></i>
             </div>
             <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">wind:
             <p id="wind"></p>
-             <p>💨</p>
+             <i class="fas fa-wind text-white"></i>
+
             </div>
         </div>
       </div>
