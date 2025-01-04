@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
     <title>weather check</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="flex justify-center items-center w-full h-[350px] bg-blue-600">
+      <div class="w-2/3 h-[90%] bg-white shadow-2xl py-5 px-2">
+        <form action="">
+            <label class="" for="city">select a city</label>
+            <div class="flex justify-around w-full">
+          <input
+            id="city"
+            type="text"
+            class="border-solid border-black border rounded-xl shadow-2xl w-1/2"
+          />
+          <input type="submit" class="bg-blue-700 px-[10px] py-1"></div>
+        </form>
+        <div class="w-full flex justify-center mt-10 text-3xl" id="weather-icon">&#9728;
+            <p>sunny</p>
+        </div>
+        <div class="w-full h-1/2 mt-3 flex justify-evenly items-center bg-slate-300 shadow-inner">
+            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl ">feels like:</div>
+            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl ">humidity:</div>
+            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl ">wind:</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
