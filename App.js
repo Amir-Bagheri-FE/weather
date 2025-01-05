@@ -11,7 +11,10 @@ let minWeather=document.querySelector('#min-weather')
 let maxWeather=document.querySelector('#max-weather')
 let temp=document.querySelector('#temp')
 
-
+//tomorrow weather 
+let tomorrowBtn=document.getElementById('tomorrow');
+tomorrowBtn.disabled=true
+tomorrowBtn.style.cursor='not-allowed';
 //changes on selected city
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -24,8 +27,9 @@ async function getweatherData(city) {
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`
     );
     const data = await responseData.json();
+    console.log(data);
+    
     //using data in app
-    city.value = "";
     cityResult.textContent = data.name;
     weatherType.textContent = data.weather[0].description;
     weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
@@ -35,7 +39,35 @@ async function getweatherData(city) {
     minWeather.textContent=data.main.temp_min
     humidity.textContent = data.main.humidity + "%";
     wind.textContent = data.wind.speed + "KM/H";
+    tomorrowBtn.disabled=false;
+    tomorrowBtn.style.cursor=''
   } catch (error) {
     alert(error);
   }
 }
+ tomorrowBtn.addEventListener('click',tomorrowWeather)
+ async function tomorrowWeather() {
+  try {
+    let cityName=city.value
+    let responseData2= await fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIkey}&units=metric`
+      ).then(tomorrowBtn.disabled=true,
+        tomorrowBtn.style.cursor='not-allowed'
+      )
+      const data2 =await responseData2.json();
+      console.log(data2);
+      
+      let headList=data2.list[4]
+    cityResult.textContent = data2.city.name+':'+headList.dt_txt.slice(0,10)
+    weatherType.textContent=headList.weather[0].description
+    weatherIcon.src = `http://openweathermap.org/img/wn/${headList.weather[0].icon}@2x.png`;
+    temp.textContent=headList.main.temp+'°'+'c'
+    feels.textContent = headList.main.feels_like+'°'+'c'
+    maxWeather.textContent=headList.main.temp_max
+    minWeather.textContent=headList.main.temp_min
+    humidity.textContent = headList.main.humidity + "%";
+    wind.textContent =headList.wind.speed + "KM/H";
+  } catch (error) {
+    alert(error)
+  }
+ }
