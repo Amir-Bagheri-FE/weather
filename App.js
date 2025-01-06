@@ -26,8 +26,7 @@ async function getweatherData(city) {
     let responseData = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`
     );
-    const data = await responseData.json();
-    console.log(data);
+    const data = await responseData.json(); 
     
     //using data in app
     cityResult.textContent = data.name;
@@ -40,7 +39,14 @@ async function getweatherData(city) {
     humidity.textContent = data.main.humidity + "%";
     wind.textContent = data.wind.speed + "KM/H";
     tomorrowBtn.disabled=false;
-    tomorrowBtn.style.cursor=''
+    tomorrowBtn.style.cursor='';
+    //sunset and sunrise
+    let SunRiseTime=new Date(data.sys.sunrise*1000)
+    const SunRise=SunRiseTime.toLocaleString().slice(9,14)
+    console.log(SunRise+'AM');
+    let SunSetTime=new Date(data.sys.sunset*1000)
+    const SunSet=SunSetTime.toLocaleString().slice(9,14)
+    console.log(SunSet+'PM');
   } catch (error) {
     alert(error);
   }
@@ -55,8 +61,7 @@ async function getweatherData(city) {
         tomorrowBtn.style.cursor='not-allowed'
       )
       const data2 =await responseData2.json();
-      console.log(data2);
-      
+    //tomorrow data in app 
       let headList=data2.list[4]
     cityResult.textContent = data2.city.name+':'+headList.dt_txt.slice(0,10)
     weatherType.textContent=headList.weather[0].description
