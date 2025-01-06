@@ -10,6 +10,8 @@ let wind = document.getElementById("wind");
 let minWeather=document.querySelector('#min-weather')
 let maxWeather=document.querySelector('#max-weather')
 let temp=document.querySelector('#temp')
+const sunriseText=document.getElementById('Sunrise')
+const sunsetText=document.getElementById('Sunset')
 
 //tomorrow weather 
 let tomorrowBtn=document.getElementById('tomorrow');
@@ -43,10 +45,10 @@ async function getweatherData(city) {
     //sunset and sunrise
     let SunRiseTime=new Date(data.sys.sunrise*1000)
     const SunRise=SunRiseTime.toLocaleString().slice(9,14)
-    console.log(SunRise+'AM');
+    sunriseText.textContent=SunRise+'AM'
     let SunSetTime=new Date(data.sys.sunset*1000)
     const SunSet=SunSetTime.toLocaleString().slice(9,14)
-    console.log(SunSet+'PM');
+    sunsetText.textContent=SunSet+'PM'
   } catch (error) {
     alert(error);
   }
