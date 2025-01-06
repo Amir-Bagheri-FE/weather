@@ -14,7 +14,7 @@
     <div
       class="flex justify-center items-center w-full h-[100vh] bg-blue-600 \"
     >
-      <div class="w-2/3 h-[90%] bg-white shadow-2xl py-5 px-2">
+      <div class="w-2/3 h-[95%] bg-white shadow-2xl py-5 px-2">
         <form action="">
           <label class="" for="city">select a city</label>
           <div class="flex justify-around w-full">
@@ -31,7 +31,7 @@
         </form>
         <div class="w-full flex flex-col items-center mt-10 text-3xl">
           <p id="city-result">cityName</p>
-          <div class="bg-green-500">
+          <div class="min-w-[30%] px-3 flex flex-col justify-center bg-green-500">
             <p id="temp" class="text-center font-bold text-white"></p>
             <img
               src="http://openweathermap.org/img/wn/01d@2x.png"
@@ -47,8 +47,8 @@
              click for tomorrow weather
             </button>
           </div>
-          <div class="w-full h-[80%] flex justify-evenly items-center bg-green-300">
-            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">
+          <div class="w-full min-h-[65%] flex justify-evenly items-center bg-green-300">
+            <div class="w-[31%] min-h-[70%] bg-slate-200 shadow-2xl text-center">
               feels like:
               <p id="feels"></p>
               <i class="fas fa-thermometer-full text-orange-300"></i>
@@ -68,6 +68,16 @@
               wind:
               <p id="wind"></p>
               <i class="fas fa-wind text-white"></i>
+            </div>
+          </div>
+          <div class=" w-full h-[15%] flex justify-between items-center  bg-red-500">
+            <div class="w-[49%] h-full bg-green-900 rounded-lg p-1">
+              <p class="text-white text-sm">Sunrise:</p>
+              <p class="text-white"></p>
+            </div>
+            <div class="w-[49%] h-full bg-green-900 rounded-lg p-1">
+              <p class="text-white text-sm">Sunset:</p>
+              <p class="text-white"></p>
             </div>
           </div>
         </div>
