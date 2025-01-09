@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -14,10 +15,10 @@
     <div
       class="flex justify-center items-center w-full min-h-[100vh] bg-blue-600 \"
     >
-      <div class="w-2/3 h-[95%] bg-white shadow-2xl py-5 px-2">
+      <div class="w-2/3 h-[98%] bg-white shadow-5xl myshadow py-5 px-2 rounded-xl">
         <form action="">
           <label class="" for="city">select a city</label>
-          <div class="flex justify-around w-full">
+          <div class="flex justify-around w-full h-[5%]">
             <input
               id="city"
               type="text"
@@ -29,11 +30,12 @@
             />
           </div>
         </form>
-        <div class="w-full flex flex-col items-center mt-10 text-3xl">
+        <div class="w-full h-[50%] flex flex-col items-center mt-10 text-3xl">
           <p id="city-result">cityName</p>
-          <div class="min-w-[30%] px-3 flex flex-col justify-center bg-green-500">
+          <div class="min-w-[30%] px-3 flex flex-col justify-center bg-green-500 rounded-lg">
             <p id="temp" class="text-center font-bold text-white"></p>
             <img
+            class="animate-pulse "
               src="http://openweathermap.org/img/wn/01d@2x.png"
               alt="weather"
               id="weatherIcon"
@@ -41,14 +43,14 @@
           </div>
           <p id="type">weather</p>
         </div>
-        <div class="w-full h-1/2 mt-3 flex flex-col justify-evenly items-center bg-slate-300 shadow-inner">
+        <div class="w-full h-[40%] mt-3 flex flex-col justify-evenly items-center bg-slate-300 shadow-inner">
           <div class="h-[20%]">
-            <button id="tomorrow" class="mt-2 bg-blue-700 px-[10px] py-1 rounded-lg text-white">
+            <button id="tomorrow" class="my-2 bg-blue-700 px-[10px] py-1 rounded-lg text-white">
              click for tomorrow weather
             </button>
           </div>
           <div class="w-full min-h-[65%] flex justify-evenly items-center py-3 bg-green-300">
-            <div class="w-[31%] min-h-[70%] bg-slate-200 shadow-2xl text-center">
+            <div class="w-[31%] min-h-[70%] bg-slate-200 myshadow text-center">
               feels like:
               <p id="feels"></p>
               <i class="fas fa-thermometer-full text-orange-300"></i>
@@ -59,12 +61,12 @@
               <p id="min-weather"></p>
               <p id="max"></p>
             </div>
-            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">
+            <div class="w-[31%] h-[70%] bg-slate-200 myshadow text-center">
               humidity:
               <p id="humidity"></p>
               <i class="fas fa-tint text-blue-600"></i>
             </div>
-            <div class="w-[31%] h-[70%] bg-slate-200 shadow-2xl text-center">
+            <div class="w-[31%] h-[70%] bg-slate-200 myshadow  text-center">
               wind:
               <p id="wind"></p>
               <i class="fas fa-wind text-white"></i>

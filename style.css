@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.myshadow{
+box-shadow: 0 0 10px black;
+}
